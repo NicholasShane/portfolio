@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nicholas Shane. — Photography &amp; Illustration</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600;1,700&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:        #0b0b0c;   /* near-black ground */
+    --paper:      #ece7df;   /* warm off-white */
+    --ash:        #8a857c;   /* muted grey for secondary text */
+    --line:       #2b2a28;   /* hairline dividers on dark */
+    --lineLight:  rgba(236,231,223,0.14);
+    --blood:      #8f0f14;   /* single accent, used consistently site-wide */
+    --grain-op:   0.05;
+  }
+
+  *{ box-sizing:border-box; }
+  html{ scroll-behavior:smooth; }
+
+  body{
+    margin:0;
+    background:var(--ink);
+    color:var(--paper);
+    font-family:'Inter', sans-serif;
+    font-weight:300;
+    overflow-x:hidden;
+  }
+
+  ::selection{ background:#9a978f; color:var(--ink); }
+
+  a{ color:inherit; }
+
+  /* film-grain overlay */
+  .grain{
+    position:fixed; inset:0; pointer-events:none; z-index:200;
+    opacity:var(--grain-op); mix-blend-mode:overlay;
+  }
+
+  .eyebrow{
+    font-family:'JetBrains Mono', monospace;
+    font-size:11px;
+    letter-spacing:0.18em;
+    text-transform:uppercase;
+    color:var(--ash);
+  }
+
+  h1,h2,h3{ font-family:'Cormorant Garamond', serif; margin:0; font-weight:600; }
+
+  /* ---------- nav ---------- */
+  header{
+    position:fixed; top:0; left:0; right:0; z-index:100;
+    display:flex; align-items:center; justify-content:space-between;
+    padding:26px clamp(20px,5vw,64px);
+    mix-blend-mode:difference;
+  }
+  .logo{
+    font-family:'Cormorant Garamond', serif;
+    font-weight:500;
+    font-size:20px; letter-spacing:0.03em;
+    text-decoration:none;
+  }
+  nav ul{ list-style:none; display:flex; gap:32px; margin:0; padding:0; }
+  nav a{
+    text-decoration:none;
+    font-family:'JetBrains Mono', monospace;
+    font-size:11px; letter-spacing:0.14em; text-transform:uppercase;
+    padding-bottom:2px; border-bottom:1px solid transparent;
+    transition:border-color .3s ease;
+  }
+  nav a:hover, nav a:focus-visible{ border-color:currentColor; }
+
+  /* ---------- hero ---------- */
+  .hero{
+    position:relative;
+    min-height:100svh;
+    display:flex; flex-direction:column; justify-content:flex-end;
+    padding:0 clamp(20px,5vw,64px) 64px;
+    background:
+      radial-gradient(120% 90% at 15% 0%, #1a1517 0%, transparent 55%),
+      radial-gradient(140% 100% at 90% 100%, #14181c 0%, transparent 60%),
+      var(--ink);
+    border-bottom:1px solid var(--line);
+  }
+  .hero-frame{
+    position:absolute; top:96px; left:22px; right:22px; bottom:22px;
+    border:1px solid var(--lineLight);
+    pointer-events:none;
+  }
+  .hero-frame span{
+    position:absolute;
+    font-family:'JetBrains Mono', monospace;
+    font-size:10px; letter-spacing:0.1em; color:var(--ash);
+  }
+  .hero-frame .tl{ top:-9px; left:12px; background:var(--ink); padding:0 6px;}
+  .hero-frame .tr{ top:-9px; right:12px; background:var(--ink); padding:0 6px;}
+  .hero-frame .tr.long{ white-space:nowrap; }
+  .hero-frame .bl{ bottom:-9px; left:12px; background:var(--ink); padding:0 6px;}
+  .hero-frame .bl.long{
+    white-space:nowrap; max-width:none;
+    bottom:-9px;
+  }
+  .hero-frame .br{ bottom:-9px; right:12px; background:var(--ink); padding:0 6px;}
+
+  .hero-eyebrow{ margin-bottom:18px; opacity:0; animation:rise .9s .1s ease forwards; }
+  .hero h1{
+    font-family:'Bodoni Moda', serif;
+    font-size:clamp(46px, 8.5vw, 130px);
+    line-height:0.88;
+    letter-spacing:-0.01em;
+    text-transform:uppercase;
+    font-style:italic;
+    opacity:0; animation:rise 1s .2s ease forwards;
+  }
+  .hero h1 em{
+    font-style:italic; font-weight:400; color:var(--blood);
+  }
+  .hero-sub{
+    display:flex; justify-content:space-between; align-items:flex-end;
+    margin-top:28px; gap:24px; flex-wrap:wrap;
+    opacity:0; animation:rise 1s .4s ease forwards;
+  }
+  .hero-statement{
+    font-family:'JetBrains Mono', monospace; font-style:normal; font-weight:400;
+    font-size:clamp(11px,1.1vw,13px); line-height:1.8; letter-spacing:0.04em; color:var(--ash);
+    max-width:none; white-space:nowrap; margin:18px 0 0;
+    opacity:0; animation:rise 1s .3s ease forwards;
+  }
+  .nowrap{ white-space:nowrap; }
+  .hero-quote-block{ max-width:38ch; margin:56px 0 20px; }
+  .hero-quote{
+    font-family:'Cormorant Garamond', serif; font-style:italic; font-weight:500;
+    font-size:clamp(16px,2vw,22px); color:var(--paper); margin:0 0 8px;
+  }
+  .hero-quote-cite{
+    font-family:'Cormorant Garamond', serif; font-style:italic; font-size:13px;
+    letter-spacing:0.04em; color:var(--ash); text-transform:uppercase;
+  }
+  .hero-meta{
+    font-family:'JetBrains Mono', monospace; font-size:11px; color:var(--ash);
+    text-align:right; line-height:1.8; letter-spacing:0.04em;
+  }
+
+  @keyframes rise{ from{ opacity:0; transform:translateY(18px);} to{opacity:1; transform:translateY(0);} }
+
+  /* ---------- section shell ---------- */
+  section{ padding:120px clamp(20px,5vw,64px); position:relative; }
+  .section-head{
+    display:flex; justify-content:space-between; align-items:flex-end;
+    margin-bottom:64px; padding-bottom:20px; border-bottom:1px solid var(--line);
+    gap:20px; flex-wrap:wrap;
+  }
+  .section-head h2{ font-size:clamp(30px,4vw,48px); text-transform:uppercase; }
+  .section-count{ font-family:'JetBrains Mono', monospace; font-size:12px; color:var(--ash); }
+
+  /* ---------- work grid ---------- */
+  .grid{
+    display:grid;
+    grid-template-columns:repeat(12, 1fr);
+    gap:28px;
+  }
+  .frame{
+    position:relative;
+    cursor:crosshair;
+    border:1px solid var(--line);
+    overflow:hidden;
+    opacity:0; transform:translateY(24px);
+    transition:opacity .8s ease, transform .8s ease;
+  }
+  .frame.in-view{ opacity:1; transform:translateY(0); }
+
+  .frame:nth-child(1){ grid-column:span 7; }
+  .frame:nth-child(2){ grid-column:span 5; }
+  .frame:nth-child(3){ grid-column:span 5; }
+  .frame:nth-child(4){ grid-column:span 7; }
+  .frame:nth-child(5){ grid-column:span 4; }
+  .frame:nth-child(6){ grid-column:span 4; }
+  .frame:nth-child(7){ grid-column:span 4; }
+  .frame:nth-child(8){ grid-column:span 12; }
+
+  .frame-art{
+    aspect-ratio:4/5; width:100%;
+    position:relative;
+    filter:grayscale(1) contrast(1.15);
+    transition:filter .6s ease, transform .8s ease;
+  }
+  .frame:nth-child(8) .frame-art{ aspect-ratio:16/7; }
+  .frame:hover .frame-art{ filter:grayscale(0.15) contrast(1.1); transform:scale(1.02); }
+
+  .frame-corner{
+    position:absolute; width:14px; height:14px; z-index:5;
+    opacity:0; transition:opacity .35s ease;
+  }
+  .frame:hover .frame-corner{ opacity:1; }
+  .frame-corner.tl{ top:10px; left:10px; border-top:1px solid var(--paper); border-left:1px solid var(--paper); }
+  .frame-corner.tr{ top:10px; right:10px; border-top:1px solid var(--paper); border-right:1px solid var(--paper); }
+  .frame-corner.bl{ bottom:10px; left:10px; border-bottom:1px solid var(--paper); border-left:1px solid var(--paper); }
+  .frame-corner.br{ bottom:10px; right:10px; border-bottom:1px solid var(--paper); border-right:1px solid var(--paper); }
+
+  .frame-cap{
+    display:flex; justify-content:space-between; align-items:baseline;
+    padding:14px 4px 4px; gap:12px;
+    border-top:1px solid var(--line);
+  }
+  .frame-cap h3{ font-size:16px; font-weight:500; text-transform:none; letter-spacing:0.01em; }
+  .frame-cap .meta{ font-family:'JetBrains Mono', monospace; font-size:10.5px; color:var(--ash); white-space:nowrap; letter-spacing:0.06em; }
+
+  /* placeholder art textures — swap these backgrounds for real <img> tags */
+  .t1{ background:
+    repeating-linear-gradient(115deg, #1c1c1e 0 2px, #141414 2px 4px),
+    radial-gradient(120% 90% at 30% 20%, #3a2f30 0%, #0d0d0e 60%); }
+  .t2{ background:
+    linear-gradient(180deg, #17181a 0%, #060607 100%),
+    radial-gradient(80% 60% at 70% 30%, #262223 0%, transparent 60%); }
+  .t3{ background:
+    radial-gradient(60% 50% at 50% 40%, #2a1f20 0%, #0a0a0b 70%); }
+  .t4{ background:
+    repeating-radial-gradient(circle at 50% 50%, #1a1a1c 0 3px, #101011 3px 6px),
+    linear-gradient(200deg, #201a1b, #0a0a0b 70%); }
+  .t5{ background:
+    linear-gradient(135deg,#161616 0%,#060606 55%,#231a1b 100%); }
+  .t6{ background:
+    radial-gradient(100% 100% at 20% 100%, #2e2426 0%, #0a0a0a 60%); }
+  .t7{ background:
+    repeating-linear-gradient(10deg, #191919 0 3px, #0d0d0d 3px 7px); }
+  .t8{ background:
+    linear-gradient(90deg,#0c0c0d 0%,#1c1516 45%,#0c0c0d 100%); }
+
+  .frame-num{
+    position:absolute; top:10px; right:10px;
+    font-family:'JetBrains Mono', monospace; font-size:10px; color:var(--ash);
+    letter-spacing:0.08em; z-index:4;
+  }
+
+  /* ---------- about / editorial spread ---------- */
+  .about-grid{
+    display:grid; grid-template-columns:1fr 1fr; gap:80px; align-items:start;
+  }
+  .pull-quote{
+    font-family:'Cormorant Garamond', serif; font-style:italic; font-weight:500;
+    font-size:clamp(19px,2.3vw,29px); line-height:1.45; color:var(--paper);
+  }
+  .pull-quote .accent{ color:var(--blood); font-weight:700; font-size:inherit; }
+  .about-body p{ font-family:'JetBrains Mono', monospace; font-size:13px; line-height:1.85; letter-spacing:0.04em; color:#cfcac1; margin:0 0 20px; }
+  .about-body p.small-line{ font-size:11px; }
+  .about-body .eyebrow{ margin-bottom:16px; display:block; }
+  .stat-list{ margin-top:36px; display:flex; flex-direction:column; gap:10px; }
+  .stat-row{
+    display:flex; justify-content:space-between; padding:10px 0;
+    border-bottom:1px solid var(--line);
+    font-family:'JetBrains Mono', monospace; font-size:12px; color:var(--ash);
+  }
+  .stat-row b{ color:var(--paper); font-weight:500; }
+
+  /* ---------- footer / contact ---------- */
+  footer{
+    padding:100px clamp(20px,5vw,64px) 50px;
+    border-top:1px solid var(--line);
+  }
+  .contact-h{
+    font-family:'Bodoni Moda', serif;
+    font-size:clamp(40px,7vw,100px); text-transform:uppercase; line-height:0.95;
+    margin-bottom:40px;
+  }
+  .contact-h a{ text-decoration:none; border-bottom:1px solid var(--blood); }
+  .contact-h a:hover{ color:var(--blood); }
+  .foot-row{
+    display:flex; justify-content:space-between; flex-wrap:wrap; gap:20px;
+    padding-top:30px; border-top:1px solid var(--line);
+    font-family:'JetBrains Mono', monospace; font-size:11px; color:var(--ash);
+    letter-spacing:0.06em;
+  }
+  .foot-links{ display:flex; align-items:center; gap:16px; }
+  .foot-links span.sep{ color:var(--ash); }
+  .foot-links a{ text-decoration:none; }
+  .foot-links a:hover, .foot-links a:focus-visible{ color:var(--paper); }
+
+  @media (max-width: 860px){
+    .hero-frame .bl.long{ font-size:8.5px; letter-spacing:0.02em; }
+    .hero-frame .tr.long{ font-size:8px; letter-spacing:0.01em; }
+    .about-grid{ grid-template-columns:1fr; gap:40px; }
+    .frame, .frame:nth-child(n){ grid-column:span 12 !important; }
+    nav ul{ gap:18px; }
+    header{ padding:20px; }
+    .hero-frame{ top:78px; }
+    .hero-statement{ white-space:normal; max-width:100%; }
+    .hero{ padding-bottom:44px; }
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    *{ animation-duration:0.01ms !important; transition-duration:0.01ms !important; }
+  }
+
+  a:focus-visible, button:focus-visible{
+    outline:1px solid var(--blood); outline-offset:3px;
+  }
+</style>
+</head>
+<body>
+
+<svg class="grain" width="100%" height="100%">
+  <filter id="noise">
+    <feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="2" stitchTiles="stitch"/>
+    <feColorMatrix type="saturate" values="0"/>
+  </filter>
+  <rect width="100%" height="100%" filter="url(#noise)"/>
+</svg>
+
+<header>
+  <a class="logo" href="#top">Nicholas Shane.</a>
+  <nav>
+    <ul>
+      <li><a href="#work">Work</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+<section class="hero" id="top">
+  <div class="hero-frame">
+    <span class="tl">NO. 001</span>
+    <span class="tr long">LEICA DC VARIO-ELMAR 1:3.3-6.4/4.3-129.</span>
+    <span class="bl long">GIVING FORM TO THE UNSEEN, THE INTANGIBLE SINCE 2009</span>
+    <span class="br">MANHATTAN, NY</span>
+  </div>
+  <div class="hero-eyebrow eyebrow">Photography &amp; Illustration — Selected Works from 2018</div>
+  <h1>Nicholas<br><em>Shane.</em></h1>
+  <p class="hero-statement">what began as expression of emotion, escape from reality, became a ritual of<br>incarnating imagination &amp; pieces of inner self; it's cathartic.</p>
+  <div class="hero-sub">
+    <div class="hero-quote-block">
+      <p class="hero-quote">“If the world were clear, art would not exist.”</p>
+      <span class="hero-quote-cite">— Albert Camus</span>
+    </div>
+    <div class="hero-meta">
+      SCROLL TO VIEW<br>
+      ↓ SELECTED WORK
+    </div>
+  </div>
+</section>
+
+<section id="work">
+  <div class="section-head">
+    <h2>Selected Work</h2>
+    <div class="section-count eyebrow">08 PIECES — PHOTOGRAPHY / ILLUSTRATION</div>
+  </div>
+
+  <div class="grid">
+
+    <article class="frame">
+      <div class="frame-art t1">
+        <span class="frame-num">NO. 01</span>
+        <div class="frame-corner tl"></div><div class="frame-corner tr"></div>
+        <div class="frame-corner bl"></div><div class="frame-corner br"></div>
+      </div>
+      <div class="frame-cap">
+        <h3>Underpass, 2AM</h3>
+        <span class="meta">SILVER GELATIN — 2024</span>
+      </div>
+    </article>
+
+    <article class="frame">
+      <div class="frame-art t2">
+        <span class="frame-num">NO. 02</span>
+        <div class="frame-corner tl"></div><div class="frame-corner tr"></div>
+        <div class="frame-corner bl"></div><div class="frame-corner br"></div>
+      </div>
+      <div class="frame-cap">
+        <h3>Study for a Crow</h3>
+        <span class="meta">INK ON BOARD — 2023</span>
+      </div>
+    </article>
+
+    <article class="frame">
+      <div class="frame-art t3">
+        <span class="frame-num">NO. 03</span>
+        <div class="frame-corner tl"></div><div class="frame-corner tr"></div>
+        <div class="frame-corner bl"></div><div class="frame-corner br"></div>
+      </div>
+      <div class="frame-cap">
+        <h3>Fire Escape, Bushwick</h3>
+        <span class="meta">35MM FILM — 2025</span>
+      </div>
+    </article>
+
+    <article class="frame">
+      <div class="frame-art t4">
+        <span class="frame-num">NO. 04</span>
+        <div class="frame-corner tl"></div><div class="frame-corner tr"></div>
+        <div class="frame-corner bl"></div><div class="frame-corner br"></div>
+      </div>
+      <div class="frame-cap">
+        <h3>Interior with No Name</h3>
+        <span class="meta">GRAPHITE &amp; INK — 2022</span>
+      </div>
+    </article>
+
+    <article class="frame">
+      <div class="frame-art t5">
+        <span class="frame-num">NO. 05</span>
+        <div class="frame-corner tl"></div><div class="frame-corner tr"></div>
+        <div class="frame-corner bl"></div><div class="frame-corner br"></div>
+      </div>
+      <div class="frame-cap">
+        <h3>Threshold I</h3>
+        <span class="meta">SILVER GELATIN — 2024</span>
+      </div>
+    </article>
+
+    <article class="frame">
+      <div class="frame-art t6">
+        <span class="frame-num">NO. 06</span>
+        <div class="frame-corner tl"></div><div class="frame-corner tr"></div>
+        <div class="frame-corner bl"></div><div class="frame-corner br"></div>
+      </div>
+      <div class="frame-cap">
+        <h3>Threshold II</h3>
+        <span class="meta">SILVER GELATIN — 2024</span>
+      </div>
+    </article>
+
+    <article class="frame">
+      <div class="frame-art t7">
+        <span class="frame-num">NO. 07</span>
+        <div class="frame-corner tl"></div><div class="frame-corner tr"></div>
+        <div class="frame-corner bl"></div><div class="frame-corner br"></div>
+      </div>
+      <div class="frame-cap">
+        <h3>Scratchboard No. 4</h3>
+        <span class="meta">SCRATCHBOARD — 2023</span>
+      </div>
+    </article>
+
+    <article class="frame">
+      <div class="frame-art t8">
+        <span class="frame-num">NO. 08</span>
+        <div class="frame-corner tl"></div><div class="frame-corner tr"></div>
+        <div class="frame-corner bl"></div><div class="frame-corner br"></div>
+      </div>
+      <div class="frame-cap">
+        <h3>Long Exposure, Canal St.</h3>
+        <span class="meta">4×5 FILM — 2026</span>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<section id="about">
+  <div class="section-head">
+    <h2>About</h2>
+    <div class="section-count eyebrow">MANHATTAN, NY</div>
+  </div>
+  <div class="about-grid">
+    <div class="pull-quote">
+      “I often fantasize about simpler, indulgent walks of life – gallerist, bartender, ski instructor – my work is also an <span class="accent">externalization of those alternate selves</span> within me, who otherwise would not come to light.”
+    </div>
+    <div class="about-body">
+      <span class="eyebrow">Biography</span>
+      <p style="color:var(--paper);">Nicholas Shane is a photographer and illustrator based in Manhattan, New York, working exclusively in black &amp; white.</p>
+      <p class="small-line">Prints are available in limited editions. Commissions considered for editorial and personal clients.</p>
+      <p class="small-line">Inspired by [but not limited to]:<br>Robert Mapplethorpe, Helmut Newton, Francesca Woodman, Peter Hujar, Daido Moriyama.</p>
+      <div class="stat-list">
+        <div class="stat-row"><span>Based in</span><b>Manhattan, NY</b></div>
+        <div class="stat-row"><span>Mediums</span><b>monochrome digital, charcoal, gouache, ink</b></div>
+        <div class="stat-row"><span>Exhibited</span><b>2018 – present</b></div>
+        <div class="stat-row"><span>Open to</span><b>commissions, headshots &amp; more</b></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer id="contact">
+  <span class="eyebrow">Get in touch</span>
+  <h2 class="contact-h">Let's <a href="mailto:nicoposivak01@gmail.com">Collaborate</a></h2>
+  <div class="foot-row">
+    <span>© 2026 NICHOLAS SHANE. ALL WORKS RESERVED.</span>
+    <div class="foot-links">
+      <a href="mailto:nicoposivak01@gmail.com">nicoposivak01@gmail.com</a>
+      <span class="sep">|</span>
+      <a href="tel:+13106135868">310*613*5868</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // scroll-reveal for work frames
+  const frames = document.querySelectorAll('.frame');
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('in-view');
+        io.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.15 });
+  frames.forEach(f => io.observe(f));
+</script>
+
+</body>
+</html>
