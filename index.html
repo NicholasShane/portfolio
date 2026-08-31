@@ -4,9 +4,31 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Nicholas Shane. — Photography &amp; Illustration</title>
+
+<!-- ─────────────────────────────────────────────────────────────
+     REPLACE the two REPLACE-ME URLs below with your real domain
+     once it is pointed at Vercel. Link previews will not show an
+     image until these are absolute URLs on the live domain.
+     ───────────────────────────────────────────────────────────── -->
+<link rel="canonical" href="https://REPLACE-ME.com/">
+<meta name="description" content="Nicholas Shane is a photographer and illustrator based in Manhattan, New York, working exclusively in black and white. Selected photography, charcoal, gouache and ink, 2022–2026.">
+<meta name="theme-color" content="#0b0b0c">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Nicholas Shane. — Photography &amp; Illustration">
+<meta property="og:description" content="Photographer and illustrator based in Manhattan, working exclusively in black and white.">
+<meta property="og:image" content="https://REPLACE-ME.com/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:url" content="https://REPLACE-ME.com/">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600;1,700&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,600;1,6..96,400..600&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,700&family=Inter:wght@300;500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
   :root{
     --ink:        #0b0b0c;   /* near-black ground */
@@ -42,7 +64,7 @@
 
   .eyebrow{
     font-family:'JetBrains Mono', monospace;
-    font-size:11px;
+    font-size:11px; font-weight:400;
     letter-spacing:0.18em;
     text-transform:uppercase;
     color:var(--ash);
@@ -67,7 +89,7 @@
   nav a{
     text-decoration:none;
     font-family:'JetBrains Mono', monospace;
-    font-size:11px; letter-spacing:0.14em; text-transform:uppercase;
+    font-size:11px; font-weight:400; letter-spacing:0.14em; text-transform:uppercase;
     padding-bottom:2px; border-bottom:1px solid transparent;
     transition:border-color .3s ease;
   }
@@ -93,7 +115,7 @@
   .hero-frame span{
     position:absolute;
     font-family:'JetBrains Mono', monospace;
-    font-size:10px; letter-spacing:0.1em; color:var(--ash);
+    font-size:10px; font-weight:400; letter-spacing:0.1em; color:var(--ash);
   }
   .hero-frame .tl{ top:-9px; left:12px; background:var(--ink); padding:0 6px;}
   .hero-frame .tr{ top:-9px; right:12px; background:var(--ink); padding:0 6px;}
@@ -113,10 +135,11 @@
     letter-spacing:-0.01em;
     text-transform:uppercase;
     font-style:italic;
+    color:var(--ash);
     opacity:0; animation:rise 1s .2s ease forwards;
   }
   .hero h1 em{
-    font-style:italic; font-weight:400; color:var(--blood);
+    font-style:italic; font-weight:400; color:var(--paper);
   }
   .hero-sub{
     display:flex; justify-content:space-between; align-items:flex-end;
@@ -129,18 +152,17 @@
     max-width:none; white-space:nowrap; margin:18px 0 0;
     opacity:0; animation:rise 1s .3s ease forwards;
   }
-  .nowrap{ white-space:nowrap; }
   .hero-quote-block{ max-width:38ch; margin:56px 0 20px; }
   .hero-quote{
     font-family:'Cormorant Garamond', serif; font-style:italic; font-weight:500;
     font-size:clamp(16px,2vw,22px); color:var(--paper); margin:0 0 8px;
   }
   .hero-quote-cite{
-    font-family:'Cormorant Garamond', serif; font-style:italic; font-size:13px;
+    font-family:'Cormorant Garamond', serif; font-style:italic; font-weight:500; font-size:13px;
     letter-spacing:0.04em; color:var(--ash); text-transform:uppercase;
   }
   .hero-meta{
-    font-family:'JetBrains Mono', monospace; font-size:11px; color:var(--ash);
+    font-family:'JetBrains Mono', monospace; font-size:11px; font-weight:400; color:var(--ash);
     text-align:right; line-height:1.8; letter-spacing:0.04em;
   }
 
@@ -154,17 +176,29 @@
     gap:20px; flex-wrap:wrap;
   }
   .section-head h2{ font-size:clamp(30px,4vw,48px); text-transform:uppercase; }
-  .section-count{ font-family:'JetBrains Mono', monospace; font-size:12px; color:var(--ash); }
+  .section-count{ font-family:'JetBrains Mono', monospace; font-size:12px; font-weight:400; color:var(--ash); }
 
   /* ---------- work grid ---------- */
-  .grid{
+  .work-group{
     display:grid;
-    grid-template-columns:repeat(12, 1fr);
     gap:28px;
+    margin-bottom:28px;
   }
+  .work-standalone{ grid-template-columns:1fr; }
+  .work-pair{ grid-template-columns:1fr 1fr; }
+  .work-trio{ grid-template-columns:1fr 1fr 1fr; }
+
+  /* Portrait pieces are much taller than they are wide, so the pair is
+     held to a narrower measure to stop it towering over the other rows.
+     Delete this rule to let them run full width. */
+  .work-pair-portrait{
+    grid-template-columns:minmax(0,1fr) minmax(0,1fr);
+    max-width:74%;
+    margin-inline:auto;
+  }
+
   .frame{
     position:relative;
-    cursor:crosshair;
     border:1px solid var(--line);
     overflow:hidden;
     opacity:0; transform:translateY(24px);
@@ -172,29 +206,28 @@
   }
   .frame.in-view{ opacity:1; transform:translateY(0); }
 
-  .frame:nth-child(1){ grid-column:span 7; }
-  .frame:nth-child(2){ grid-column:span 5; }
-  .frame:nth-child(3){ grid-column:span 5; }
-  .frame:nth-child(4){ grid-column:span 7; }
-  .frame:nth-child(5){ grid-column:span 4; }
-  .frame:nth-child(6){ grid-column:span 4; }
-  .frame:nth-child(7){ grid-column:span 4; }
-  .frame:nth-child(8){ grid-column:span 12; }
-
+  /* the clickable image area — a real button, so it is keyboard reachable */
   .frame-art{
-    aspect-ratio:4/5; width:100%;
-    position:relative;
-    filter:grayscale(1) contrast(1.15);
-    transition:filter .6s ease, transform .8s ease;
+    display:block; position:relative;
+    width:100%; padding:0; margin:0;
+    border:0; background:none; font:inherit; color:inherit;
+    cursor:crosshair;
+    overflow:hidden;
   }
-  .frame:nth-child(8) .frame-art{ aspect-ratio:16/7; }
-  .frame:hover .frame-art{ filter:grayscale(0.15) contrast(1.1); transform:scale(1.02); }
+  .frame-art img{
+    display:block; width:100%; height:100%;
+    object-fit:cover;
+    transition:transform .8s ease;
+  }
+  .frame-art:hover img,
+  .frame-art:focus-visible img{ transform:scale(1.02); }
 
   .frame-corner{
     position:absolute; width:14px; height:14px; z-index:5;
     opacity:0; transition:opacity .35s ease;
   }
-  .frame:hover .frame-corner{ opacity:1; }
+  .frame-art:hover .frame-corner,
+  .frame-art:focus-visible .frame-corner{ opacity:1; }
   .frame-corner.tl{ top:10px; left:10px; border-top:1px solid var(--paper); border-left:1px solid var(--paper); }
   .frame-corner.tr{ top:10px; right:10px; border-top:1px solid var(--paper); border-right:1px solid var(--paper); }
   .frame-corner.bl{ bottom:10px; left:10px; border-bottom:1px solid var(--paper); border-left:1px solid var(--paper); }
@@ -206,34 +239,47 @@
     border-top:1px solid var(--line);
   }
   .frame-cap h3{ font-size:16px; font-weight:500; text-transform:none; letter-spacing:0.01em; }
-  .frame-cap .meta{ font-family:'JetBrains Mono', monospace; font-size:10.5px; color:var(--ash); white-space:nowrap; letter-spacing:0.06em; }
-
-  /* placeholder art textures — swap these backgrounds for real <img> tags */
-  .t1{ background:
-    repeating-linear-gradient(115deg, #1c1c1e 0 2px, #141414 2px 4px),
-    radial-gradient(120% 90% at 30% 20%, #3a2f30 0%, #0d0d0e 60%); }
-  .t2{ background:
-    linear-gradient(180deg, #17181a 0%, #060607 100%),
-    radial-gradient(80% 60% at 70% 30%, #262223 0%, transparent 60%); }
-  .t3{ background:
-    radial-gradient(60% 50% at 50% 40%, #2a1f20 0%, #0a0a0b 70%); }
-  .t4{ background:
-    repeating-radial-gradient(circle at 50% 50%, #1a1a1c 0 3px, #101011 3px 6px),
-    linear-gradient(200deg, #201a1b, #0a0a0b 70%); }
-  .t5{ background:
-    linear-gradient(135deg,#161616 0%,#060606 55%,#231a1b 100%); }
-  .t6{ background:
-    radial-gradient(100% 100% at 20% 100%, #2e2426 0%, #0a0a0a 60%); }
-  .t7{ background:
-    repeating-linear-gradient(10deg, #191919 0 3px, #0d0d0d 3px 7px); }
-  .t8{ background:
-    linear-gradient(90deg,#0c0c0d 0%,#1c1516 45%,#0c0c0d 100%); }
+  .frame-cap .meta{ font-family:'JetBrains Mono', monospace; font-size:10.5px; font-weight:400; color:var(--ash); white-space:nowrap; letter-spacing:0.06em; }
 
   .frame-num{
     position:absolute; top:10px; right:10px;
-    font-family:'JetBrains Mono', monospace; font-size:10px; color:var(--ash);
+    font-family:'JetBrains Mono', monospace; font-size:10px; font-weight:400; color:var(--ash);
     letter-spacing:0.08em; z-index:4;
   }
+
+  /* ---------- lightbox ---------- */
+  .lightbox{
+    position:fixed; inset:0; z-index:300;
+    display:none; align-items:center; justify-content:center;
+    padding:clamp(20px,5vw,64px);
+    background:var(--ink);
+  }
+  .lightbox.is-open{ display:flex; }
+  .lightbox-inner{
+    display:flex; flex-direction:column; gap:16px;
+    max-width:100%; max-height:100%;
+  }
+  .lightbox img{
+    max-width:100%; max-height:calc(100svh - 180px);
+    width:auto; height:auto; object-fit:contain;
+    border:1px solid var(--line);
+  }
+  .lightbox-cap{
+    display:flex; justify-content:space-between; align-items:baseline; gap:16px;
+    flex-wrap:wrap;
+  }
+  .lightbox-cap h3{ font-size:18px; font-weight:500; }
+  .lightbox-cap .meta{
+    font-family:'JetBrains Mono', monospace; font-size:10.5px; font-weight:400;
+    color:var(--ash); letter-spacing:0.06em;
+  }
+  .lightbox-close{
+    position:fixed; top:22px; right:22px;
+    background:none; border:0; padding:10px; cursor:pointer;
+    font-family:'JetBrains Mono', monospace; font-size:11px; font-weight:400;
+    letter-spacing:0.14em; text-transform:uppercase; color:var(--paper);
+  }
+  .lightbox-close:hover{ color:var(--blood); }
 
   /* ---------- about / editorial spread ---------- */
   .about-grid{
@@ -241,17 +287,18 @@
   }
   .pull-quote{
     font-family:'Cormorant Garamond', serif; font-style:italic; font-weight:500;
-    font-size:clamp(19px,2.3vw,29px); line-height:1.45; color:var(--paper);
+    font-size:clamp(19px,2.3vw,29px); line-height:1.45; color:var(--ash);
   }
-  .pull-quote .accent{ color:var(--blood); font-weight:700; font-size:inherit; }
-  .about-body p{ font-family:'JetBrains Mono', monospace; font-size:13px; line-height:1.85; letter-spacing:0.04em; color:#cfcac1; margin:0 0 20px; }
+  .pull-quote .accent{ color:var(--paper); font-weight:700; font-size:inherit; }
+  .about-body p{ font-family:'JetBrains Mono', monospace; font-size:13px; font-weight:400; line-height:1.85; letter-spacing:0.04em; color:#cfcac1; margin:0 0 20px; }
   .about-body p.small-line{ font-size:11px; }
+  .about-body .stat-list + p.small-line{ margin-top:32px; }
   .about-body .eyebrow{ margin-bottom:16px; display:block; }
   .stat-list{ margin-top:36px; display:flex; flex-direction:column; gap:10px; }
   .stat-row{
     display:flex; justify-content:space-between; padding:10px 0;
     border-bottom:1px solid var(--line);
-    font-family:'JetBrains Mono', monospace; font-size:12px; color:var(--ash);
+    font-family:'JetBrains Mono', monospace; font-size:12px; font-weight:400; color:var(--ash);
   }
   .stat-row b{ color:var(--paper); font-weight:500; }
 
@@ -270,7 +317,7 @@
   .foot-row{
     display:flex; justify-content:space-between; flex-wrap:wrap; gap:20px;
     padding-top:30px; border-top:1px solid var(--line);
-    font-family:'JetBrains Mono', monospace; font-size:11px; color:var(--ash);
+    font-family:'JetBrains Mono', monospace; font-size:11px; font-weight:400; color:var(--ash);
     letter-spacing:0.06em;
   }
   .foot-links{ display:flex; align-items:center; gap:16px; }
@@ -282,12 +329,19 @@
     .hero-frame .bl.long{ font-size:8.5px; letter-spacing:0.02em; }
     .hero-frame .tr.long{ font-size:8px; letter-spacing:0.01em; }
     .about-grid{ grid-template-columns:1fr; gap:40px; }
-    .frame, .frame:nth-child(n){ grid-column:span 12 !important; }
+    .work-pair, .work-trio{ grid-template-columns:1fr; }
+    .work-pair-portrait{ grid-template-columns:1fr; max-width:none; }
     nav ul{ gap:18px; }
     header{ padding:20px; }
     .hero-frame{ top:78px; }
     .hero-statement{ white-space:normal; max-width:100%; }
     .hero{ padding-bottom:44px; }
+  }
+
+  /* email + phone side by side overflow below ~330px, so stack them */
+  @media (max-width: 380px){
+    .foot-links{ flex-direction:column; align-items:flex-start; gap:8px; }
+    .foot-links span.sep{ display:none; }
   }
 
   @media (prefers-reduced-motion: reduce){
@@ -301,7 +355,7 @@
 </head>
 <body>
 
-<svg class="grain" width="100%" height="100%">
+<svg class="grain" width="100%" height="100%" aria-hidden="true" focusable="false">
   <filter id="noise">
     <feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="2" stitchTiles="stitch"/>
     <feColorMatrix type="saturate" values="0"/>
@@ -310,7 +364,7 @@
 </svg>
 
 <header>
-  <a class="logo" href="#top">Nicholas Shane.</a>
+  <a class="logo" href="#top">N. Shane</a>
   <nav>
     <ul>
       <li><a href="#work">Work</a></li>
@@ -321,15 +375,15 @@
 </header>
 
 <section class="hero" id="top">
-  <div class="hero-frame">
+  <div class="hero-frame" aria-hidden="true">
     <span class="tl">NO. 001</span>
     <span class="tr long">LEICA DC VARIO-ELMAR 1:3.3-6.4/4.3-129.</span>
-    <span class="bl long">GIVING FORM TO THE UNSEEN, THE INTANGIBLE SINCE 2009</span>
+    <span class="bl long">INCARNATING THE UNSEEN, THE INTANGIBLE SINCE 2009</span>
     <span class="br">MANHATTAN, NY</span>
   </div>
-  <div class="hero-eyebrow eyebrow">Photography &amp; Illustration — Selected Works from 2018</div>
+  <div class="hero-eyebrow eyebrow">Photography &amp; Illustration — Selected Works 2022–2026</div>
   <h1>Nicholas<br><em>Shane.</em></h1>
-  <p class="hero-statement">what began as expression of emotion, escape from reality, became a ritual of<br>incarnating imagination &amp; pieces of inner self; it's cathartic.</p>
+  <p class="hero-statement">what began as expression of emotion, escape from reality, became a ritual of<br>giving form to imagination &amp; pieces of inner self; it's cathartic.</p>
   <div class="hero-sub">
     <div class="hero-quote-block">
       <p class="hero-quote">“If the world were clear, art would not exist.”</p>
@@ -348,104 +402,182 @@
     <div class="section-count eyebrow">08 PIECES — PHOTOGRAPHY / ILLUSTRATION</div>
   </div>
 
-  <div class="grid">
-
+  <div class="work-group work-standalone">
     <article class="frame">
-      <div class="frame-art t1">
+      <button type="button" class="frame-art" style="aspect-ratio:1.275"
+              data-full="images/princeton-cloister-1600.webp"
+              data-title="Princeton Cloister" data-meta="MONOCHROME DIGITAL — 2025">
+        <img src="images/princeton-cloister-800.webp"
+             srcset="images/princeton-cloister-480.webp 480w,
+                     images/princeton-cloister-800.webp 800w,
+                     images/princeton-cloister-1200.webp 1200w,
+                     images/princeton-cloister-1600.webp 1600w"
+             sizes="(max-width: 860px) 100vw, calc(100vw - 128px)"
+             width="1600" height="1254" loading="eager" decoding="async"
+             alt="Vaulted Gothic cloister at Princeton, ribbed stone arches receding down a flagstone walkway toward a distant doorway.">
         <span class="frame-num">NO. 01</span>
-        <div class="frame-corner tl"></div><div class="frame-corner tr"></div>
-        <div class="frame-corner bl"></div><div class="frame-corner br"></div>
-      </div>
+        <span class="frame-corner tl"></span><span class="frame-corner tr"></span>
+        <span class="frame-corner bl"></span><span class="frame-corner br"></span>
+      </button>
       <div class="frame-cap">
-        <h3>Underpass, 2AM</h3>
-        <span class="meta">SILVER GELATIN — 2024</span>
+        <h3>Princeton Cloister</h3>
+        <span class="meta">MONOCHROME DIGITAL — 2025</span>
       </div>
     </article>
+  </div>
 
+  <div class="work-group work-pair">
     <article class="frame">
-      <div class="frame-art t2">
+      <button type="button" class="frame-art" style="aspect-ratio:1.5"
+              data-full="images/echoes-1600.webp"
+              data-title="Echoes" data-meta="MONOCHROME DIGITAL — 2025">
+        <img src="images/echoes-800.webp"
+             srcset="images/echoes-480.webp 480w,
+                     images/echoes-800.webp 800w,
+                     images/echoes-1200.webp 1200w,
+                     images/echoes-1600.webp 1600w"
+             sizes="(max-width: 860px) 100vw, calc((100vw - 156px) / 2)"
+             width="1600" height="1066" loading="lazy" decoding="async"
+             alt="A man in a long dark coat leaning against a stone pillar in a Gothic cloister, arches receding into the distance behind him.">
         <span class="frame-num">NO. 02</span>
-        <div class="frame-corner tl"></div><div class="frame-corner tr"></div>
-        <div class="frame-corner bl"></div><div class="frame-corner br"></div>
-      </div>
+        <span class="frame-corner tl"></span><span class="frame-corner tr"></span>
+        <span class="frame-corner bl"></span><span class="frame-corner br"></span>
+      </button>
       <div class="frame-cap">
-        <h3>Study for a Crow</h3>
-        <span class="meta">INK ON BOARD — 2023</span>
+        <h3>Echoes</h3>
+        <span class="meta">MONOCHROME DIGITAL — 2025</span>
       </div>
     </article>
-
     <article class="frame">
-      <div class="frame-art t3">
+      <button type="button" class="frame-art" style="aspect-ratio:1.5"
+              data-full="images/kazuo-1600.webp"
+              data-title="Kazuo" data-meta="MONOCHROME DIGITAL — 2026">
+        <img src="images/kazuo-800.webp"
+             srcset="images/kazuo-480.webp 480w,
+                     images/kazuo-800.webp 800w,
+                     images/kazuo-1200.webp 1200w,
+                     images/kazuo-1600.webp 1600w"
+             sizes="(max-width: 860px) 100vw, calc((100vw - 156px) / 2)"
+             width="1600" height="1066" loading="lazy" decoding="async"
+             alt="Portrait of a young man in a leather jacket outside a stone building, hands raised behind his head, looking down.">
         <span class="frame-num">NO. 03</span>
-        <div class="frame-corner tl"></div><div class="frame-corner tr"></div>
-        <div class="frame-corner bl"></div><div class="frame-corner br"></div>
-      </div>
+        <span class="frame-corner tl"></span><span class="frame-corner tr"></span>
+        <span class="frame-corner bl"></span><span class="frame-corner br"></span>
+      </button>
       <div class="frame-cap">
-        <h3>Fire Escape, Bushwick</h3>
-        <span class="meta">35MM FILM — 2025</span>
+        <h3>Kazuo</h3>
+        <span class="meta">MONOCHROME DIGITAL — 2026</span>
       </div>
     </article>
+  </div>
 
+  <div class="work-group work-pair work-pair-portrait">
     <article class="frame">
-      <div class="frame-art t4">
+      <button type="button" class="frame-art" style="aspect-ratio:0.75"
+              data-full="images/king-1199.webp"
+              data-title="King" data-meta="GOUACHE — 2022">
+        <img src="images/king-800.webp"
+             srcset="images/king-480.webp 480w,
+                     images/king-800.webp 800w,
+                     images/king-1199.webp 1199w"
+             sizes="(max-width: 860px) 100vw, calc((74vw - 128px) / 2)"
+             width="1199" height="1600" loading="lazy" decoding="async"
+             alt="Charcoal drawing of a lion's head in three-quarter profile, its mane rendered in fine strokes against a dark ground.">
         <span class="frame-num">NO. 04</span>
-        <div class="frame-corner tl"></div><div class="frame-corner tr"></div>
-        <div class="frame-corner bl"></div><div class="frame-corner br"></div>
-      </div>
+        <span class="frame-corner tl"></span><span class="frame-corner tr"></span>
+        <span class="frame-corner bl"></span><span class="frame-corner br"></span>
+      </button>
       <div class="frame-cap">
-        <h3>Interior with No Name</h3>
-        <span class="meta">GRAPHITE &amp; INK — 2022</span>
+        <h3>King</h3>
+        <span class="meta">GOUACHE — 2022</span>
       </div>
     </article>
-
     <article class="frame">
-      <div class="frame-art t5">
+      <button type="button" class="frame-art" style="aspect-ratio:0.722"
+              data-full="images/intimacy-1155.webp"
+              data-title="Intimacy" data-meta="GOUACHE — 2024">
+        <img src="images/intimacy-800.webp"
+             srcset="images/intimacy-480.webp 480w,
+                     images/intimacy-800.webp 800w,
+                     images/intimacy-1155.webp 1155w"
+             sizes="(max-width: 860px) 100vw, calc((74vw - 128px) / 2)"
+             width="1155" height="1600" loading="lazy" decoding="async"
+             alt="Framed graphite drawing of two clasped hands, one wrist wearing a fine chain bracelet.">
         <span class="frame-num">NO. 05</span>
-        <div class="frame-corner tl"></div><div class="frame-corner tr"></div>
-        <div class="frame-corner bl"></div><div class="frame-corner br"></div>
-      </div>
+        <span class="frame-corner tl"></span><span class="frame-corner tr"></span>
+        <span class="frame-corner bl"></span><span class="frame-corner br"></span>
+      </button>
       <div class="frame-cap">
-        <h3>Threshold I</h3>
-        <span class="meta">SILVER GELATIN — 2024</span>
+        <h3>Intimacy</h3>
+        <span class="meta">GOUACHE — 2024</span>
       </div>
     </article>
+  </div>
 
+  <div class="work-group work-trio">
     <article class="frame">
-      <div class="frame-art t6">
+      <button type="button" class="frame-art" style="aspect-ratio:1.5"
+              data-full="images/flash-1600.webp"
+              data-title="Flash" data-meta="MONOCHROME DIGITAL — 2026">
+        <img src="images/flash-480.webp"
+             srcset="images/flash-480.webp 480w,
+                     images/flash-800.webp 800w,
+                     images/flash-1200.webp 1200w,
+                     images/flash-1600.webp 1600w"
+             sizes="(max-width: 860px) 100vw, calc((100vw - 184px) / 3)"
+             width="1600" height="1066" loading="lazy" decoding="async"
+             alt="A lone figure crossing a wide Manhattan avenue on a snowy day, crosswalk stripes running toward the camera.">
         <span class="frame-num">NO. 06</span>
-        <div class="frame-corner tl"></div><div class="frame-corner tr"></div>
-        <div class="frame-corner bl"></div><div class="frame-corner br"></div>
-      </div>
+        <span class="frame-corner tl"></span><span class="frame-corner tr"></span>
+        <span class="frame-corner bl"></span><span class="frame-corner br"></span>
+      </button>
       <div class="frame-cap">
-        <h3>Threshold II</h3>
-        <span class="meta">SILVER GELATIN — 2024</span>
+        <h3>Flash</h3>
+        <span class="meta">MONOCHROME DIGITAL — 2026</span>
       </div>
     </article>
-
     <article class="frame">
-      <div class="frame-art t7">
+      <button type="button" class="frame-art" style="aspect-ratio:1.5"
+              data-full="images/intersection-1600.webp"
+              data-title="Intersection" data-meta="MONOCHROME DIGITAL — 2026">
+        <img src="images/intersection-480.webp"
+             srcset="images/intersection-480.webp 480w,
+                     images/intersection-800.webp 800w,
+                     images/intersection-1200.webp 1200w,
+                     images/intersection-1600.webp 1600w"
+             sizes="(max-width: 860px) 100vw, calc((100vw - 184px) / 3)"
+             width="1600" height="1066" loading="lazy" decoding="async"
+             alt="A snowy Manhattan street corner with a taxi van parked beside a stone apartment building and a traffic light overhead.">
         <span class="frame-num">NO. 07</span>
-        <div class="frame-corner tl"></div><div class="frame-corner tr"></div>
-        <div class="frame-corner bl"></div><div class="frame-corner br"></div>
-      </div>
+        <span class="frame-corner tl"></span><span class="frame-corner tr"></span>
+        <span class="frame-corner bl"></span><span class="frame-corner br"></span>
+      </button>
       <div class="frame-cap">
-        <h3>Scratchboard No. 4</h3>
-        <span class="meta">SCRATCHBOARD — 2023</span>
+        <h3>Intersection</h3>
+        <span class="meta">MONOCHROME DIGITAL — 2026</span>
       </div>
     </article>
-
     <article class="frame">
-      <div class="frame-art t8">
+      <button type="button" class="frame-art" style="aspect-ratio:1.5"
+              data-full="images/central-park-slopes-1600.webp"
+              data-title="Central Park Slopes" data-meta="MONOCHROME DIGITAL — 2026">
+        <img src="images/central-park-slopes-480.webp"
+             srcset="images/central-park-slopes-480.webp 480w,
+                     images/central-park-slopes-800.webp 800w,
+                     images/central-park-slopes-1200.webp 1200w,
+                     images/central-park-slopes-1600.webp 1600w"
+             sizes="(max-width: 860px) 100vw, calc((100vw - 184px) / 3)"
+             width="1600" height="1066" loading="lazy" decoding="async"
+             alt="Cross-country skiers on a snow-covered Central Park path lined with lampposts and bare, snow-laden trees.">
         <span class="frame-num">NO. 08</span>
-        <div class="frame-corner tl"></div><div class="frame-corner tr"></div>
-        <div class="frame-corner bl"></div><div class="frame-corner br"></div>
-      </div>
+        <span class="frame-corner tl"></span><span class="frame-corner tr"></span>
+        <span class="frame-corner bl"></span><span class="frame-corner br"></span>
+      </button>
       <div class="frame-cap">
-        <h3>Long Exposure, Canal St.</h3>
-        <span class="meta">4×5 FILM — 2026</span>
+        <h3>Central Park Slopes</h3>
+        <span class="meta">MONOCHROME DIGITAL — 2026</span>
       </div>
     </article>
-
   </div>
 </section>
 
@@ -461,14 +593,14 @@
     <div class="about-body">
       <span class="eyebrow">Biography</span>
       <p style="color:var(--paper);">Nicholas Shane is a photographer and illustrator based in Manhattan, New York, working exclusively in black &amp; white.</p>
-      <p class="small-line">Prints are available in limited editions. Commissions considered for editorial and personal clients.</p>
-      <p class="small-line">Inspired by [but not limited to]:<br>Robert Mapplethorpe, Helmut Newton, Francesca Woodman, Peter Hujar, Daido Moriyama.</p>
       <div class="stat-list">
         <div class="stat-row"><span>Based in</span><b>Manhattan, NY</b></div>
         <div class="stat-row"><span>Mediums</span><b>monochrome digital, charcoal, gouache, ink</b></div>
         <div class="stat-row"><span>Exhibited</span><b>2018 – present</b></div>
         <div class="stat-row"><span>Open to</span><b>commissions, headshots &amp; more</b></div>
       </div>
+      <p class="small-line">Prints are available in limited editions. Commissions considered for editorial and personal clients.</p>
+      <p class="small-line">Inspired by [but not limited to]:<br>Robert Mapplethorpe, Helmut Newton, Francesca Woodman, Peter Hujar, Daido Moriyama.</p>
     </div>
   </div>
 </section>
@@ -477,14 +609,25 @@
   <span class="eyebrow">Get in touch</span>
   <h2 class="contact-h">Let's <a href="mailto:nicoposivak01@gmail.com">Collaborate</a></h2>
   <div class="foot-row">
-    <span>© 2026 NICHOLAS SHANE. ALL WORKS RESERVED.</span>
+    <span>© 2026 NICHOLAS SHANE. ALL RIGHTS RESERVED.</span>
     <div class="foot-links">
       <a href="mailto:nicoposivak01@gmail.com">nicoposivak01@gmail.com</a>
       <span class="sep">|</span>
-      <a href="tel:+13106135868">310*613*5868</a>
+      <a href="tel:+13106135868">310.613.5868</a>
     </div>
   </div>
 </footer>
+
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Enlarged artwork">
+  <button type="button" class="lightbox-close" id="lightbox-close" aria-label="Close">Close ✕</button>
+  <div class="lightbox-inner">
+    <img id="lightbox-img" alt="">
+    <div class="lightbox-cap">
+      <h3 id="lightbox-title"></h3>
+      <span class="meta" id="lightbox-meta"></span>
+    </div>
+  </div>
+</div>
 
 <script>
   // scroll-reveal for work frames
@@ -498,6 +641,43 @@
     });
   }, { threshold: 0.15 });
   frames.forEach(f => io.observe(f));
+
+  // lightbox
+  const box      = document.getElementById('lightbox');
+  const boxImg   = document.getElementById('lightbox-img');
+  const boxTitle = document.getElementById('lightbox-title');
+  const boxMeta  = document.getElementById('lightbox-meta');
+  const boxClose = document.getElementById('lightbox-close');
+  let lastFocus  = null;
+
+  function openBox(btn) {
+    const img = btn.querySelector('img');
+    boxImg.src        = btn.dataset.full;
+    boxImg.alt        = img.alt;
+    boxTitle.textContent = btn.dataset.title;
+    boxMeta.textContent  = btn.dataset.meta;
+    lastFocus = btn;
+    box.classList.add('is-open');
+    document.body.style.overflow = 'hidden';
+    boxClose.focus();
+  }
+
+  function closeBox() {
+    box.classList.remove('is-open');
+    boxImg.removeAttribute('src');
+    document.body.style.overflow = '';
+    if (lastFocus) lastFocus.focus();
+  }
+
+  document.querySelectorAll('.frame-art').forEach(btn => {
+    btn.addEventListener('click', () => openBox(btn));
+  });
+
+  boxClose.addEventListener('click', closeBox);
+  box.addEventListener('click', e => { if (e.target === box) closeBox(); });
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape' && box.classList.contains('is-open')) closeBox();
+  });
 </script>
 
 </body>
