@@ -308,6 +308,11 @@
   .about-body p.small-line{ font-size:11px; }
   .about-body .stat-list + p.small-line{ margin-top:32px; }
   .about-body .eyebrow{ margin-bottom:16px; display:block; }
+  /* the last paragraph needs no trailing margin, and the run-out to the
+     footer was 140px */
+  .about-body p:last-child{ margin-bottom:0; }
+  #about{ padding-bottom:48px; }
+
   .stat-list{ margin-top:36px; display:flex; flex-direction:column; gap:10px; }
   .stat-row{
     display:flex; justify-content:space-between; padding:10px 0;
