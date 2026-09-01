@@ -196,7 +196,7 @@
     margin-inline:auto;
   }
 
-  .frame{
+  .frame{ display:flex; flex-direction:column;
     position:relative;
     border:1px solid var(--line);
     overflow:hidden;
@@ -232,7 +232,7 @@
   .frame-corner.bl{ bottom:10px; left:10px; border-bottom:1px solid var(--paper); border-left:1px solid var(--paper); }
   .frame-corner.br{ bottom:10px; right:10px; border-bottom:1px solid var(--paper); border-right:1px solid var(--paper); }
 
-  .frame-cap{
+  .frame-cap{ margin-top:auto;
     display:flex; justify-content:space-between; align-items:baseline;
     padding:14px 4px 4px; gap:12px;
     border-top:1px solid var(--line);
@@ -398,7 +398,7 @@
 
 <section id="work">
   <div class="section-head">
-    <h2>Selected Work</h2>
+    <h2>Selected Works</h2>
     <div class="section-count eyebrow">08 PIECES — PHOTOGRAPHY / ILLUSTRATION</div>
   </div>
 
@@ -406,7 +406,7 @@
     <article class="frame">
       <button type="button" class="frame-art" style="aspect-ratio:1.275"
               data-full="images/princeton-cloister-1600.webp"
-              data-title="princeton cloister" data-meta="MONOCHROME DIGITAL — 2025">
+              data-title="cloister at Princeton" data-meta="MONOCHROME DIGITAL — 2025">
         <img src="images/princeton-cloister-800.webp"
              srcset="images/princeton-cloister-480.webp 480w,
                      images/princeton-cloister-800.webp 800w,
@@ -420,7 +420,7 @@
         <span class="frame-corner bl"></span><span class="frame-corner br"></span>
       </button>
       <div class="frame-cap">
-        <h3>princeton cloister</h3>
+        <h3>cloister at Princeton</h3>
         <span class="meta">MONOCHROME DIGITAL — 2025</span>
       </div>
     </article>
