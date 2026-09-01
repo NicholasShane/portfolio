@@ -234,17 +234,20 @@
 
   .frame-cap{ margin-top:auto;
     display:flex; justify-content:space-between; align-items:baseline;
-    padding:14px 4px 4px; gap:12px;
+    flex-wrap:wrap;
+    padding:14px 4px 4px; gap:4px 12px;
     border-top:1px solid var(--line);
   }
   .frame-cap h3{ font-size:16px; font-weight:500; text-transform:none; letter-spacing:0.01em; }
   .frame-cap .meta{ font-family:'JetBrains Mono', monospace; font-size:10.5px; font-weight:400; color:var(--ash); white-space:nowrap; letter-spacing:0.06em; }
 
+  .frame-title{ display:flex; align-items:baseline; gap:8px; flex:1 1 auto; }
+  .frame-title h3{ white-space:nowrap; }
   .frame-num{
-    position:absolute; top:10px; right:10px;
-    font-family:'JetBrains Mono', monospace; font-size:10px; font-weight:400; color:var(--ash);
-    letter-spacing:0.08em; z-index:4;
+    font-family:'JetBrains Mono', monospace; font-size:10px; font-weight:400;
+    color:var(--ash); letter-spacing:0.08em; white-space:nowrap;
   }
+  .frame-num::before{ content:'|'; margin-right:8px; }
 
   /* ---------- lightbox ---------- */
   .lightbox{
@@ -415,12 +418,14 @@
              sizes="(max-width: 860px) 100vw, calc((100vw - 128px) * 0.7)"
              width="1600" height="1254" loading="eager" decoding="async"
              alt="Vaulted Gothic cloister at Princeton, ribbed stone arches receding down a flagstone walkway toward a distant doorway.">
-        <span class="frame-num">NO. 01</span>
         <span class="frame-corner tl"></span><span class="frame-corner tr"></span>
         <span class="frame-corner bl"></span><span class="frame-corner br"></span>
       </button>
       <div class="frame-cap">
-        <h3>cloister at Princeton</h3>
+        <div class="frame-title">
+          <h3>cloister at Princeton</h3>
+          <span class="frame-num">NO. 01</span>
+        </div>
         <span class="meta">MONOCHROME DIGITAL — 2025</span>
       </div>
     </article>
@@ -439,12 +444,14 @@
              sizes="(max-width: 860px) 100vw, calc((100vw - 156px) / 2)"
              width="1600" height="1066" loading="lazy" decoding="async"
              alt="A man in a long dark coat leaning against a stone pillar in a Gothic cloister, arches receding into the distance behind him.">
-        <span class="frame-num">NO. 02</span>
         <span class="frame-corner tl"></span><span class="frame-corner tr"></span>
         <span class="frame-corner bl"></span><span class="frame-corner br"></span>
       </button>
       <div class="frame-cap">
-        <h3>echoes</h3>
+        <div class="frame-title">
+          <h3>echoes</h3>
+          <span class="frame-num">NO. 02</span>
+        </div>
         <span class="meta">MONOCHROME DIGITAL — 2025</span>
       </div>
     </article>
@@ -460,12 +467,14 @@
              sizes="(max-width: 860px) 100vw, calc((100vw - 156px) / 2)"
              width="1600" height="1066" loading="lazy" decoding="async"
              alt="Portrait of a young man in a leather jacket outside a stone building, hands raised behind his head, looking down.">
-        <span class="frame-num">NO. 03</span>
         <span class="frame-corner tl"></span><span class="frame-corner tr"></span>
         <span class="frame-corner bl"></span><span class="frame-corner br"></span>
       </button>
       <div class="frame-cap">
-        <h3>kazuo</h3>
+        <div class="frame-title">
+          <h3>kazuo</h3>
+          <span class="frame-num">NO. 03</span>
+        </div>
         <span class="meta">MONOCHROME DIGITAL — 2026</span>
       </div>
     </article>
@@ -483,12 +492,14 @@
              sizes="(max-width: 860px) 100vw, calc((74vw - 128px) / 2)"
              width="1199" height="1600" loading="lazy" decoding="async"
              alt="Charcoal drawing of a lion's head in three-quarter profile, its mane rendered in fine strokes against a dark ground.">
-        <span class="frame-num">NO. 04</span>
         <span class="frame-corner tl"></span><span class="frame-corner tr"></span>
         <span class="frame-corner bl"></span><span class="frame-corner br"></span>
       </button>
       <div class="frame-cap">
-        <h3>king</h3>
+        <div class="frame-title">
+          <h3>king</h3>
+          <span class="frame-num">NO. 04</span>
+        </div>
         <span class="meta">GOUACHE — 2022</span>
       </div>
     </article>
@@ -503,12 +514,14 @@
              sizes="(max-width: 860px) 100vw, calc((74vw - 128px) / 2)"
              width="1155" height="1600" loading="lazy" decoding="async"
              alt="Framed graphite drawing of two clasped hands, one wrist wearing a fine chain bracelet.">
-        <span class="frame-num">NO. 05</span>
         <span class="frame-corner tl"></span><span class="frame-corner tr"></span>
         <span class="frame-corner bl"></span><span class="frame-corner br"></span>
       </button>
       <div class="frame-cap">
-        <h3>intimacy</h3>
+        <div class="frame-title">
+          <h3>intimacy</h3>
+          <span class="frame-num">NO. 05</span>
+        </div>
         <span class="meta">GOUACHE — 2024</span>
       </div>
     </article>
@@ -527,12 +540,14 @@
              sizes="(max-width: 860px) 100vw, calc((100vw - 184px) / 3)"
              width="1600" height="1066" loading="lazy" decoding="async"
              alt="A lone figure crossing a wide Manhattan avenue on a snowy day, crosswalk stripes running toward the camera.">
-        <span class="frame-num">NO. 06</span>
         <span class="frame-corner tl"></span><span class="frame-corner tr"></span>
         <span class="frame-corner bl"></span><span class="frame-corner br"></span>
       </button>
       <div class="frame-cap">
-        <h3>flash</h3>
+        <div class="frame-title">
+          <h3>flash</h3>
+          <span class="frame-num">NO. 06</span>
+        </div>
         <span class="meta">MONOCHROME DIGITAL — 2026</span>
       </div>
     </article>
@@ -548,12 +563,14 @@
              sizes="(max-width: 860px) 100vw, calc((100vw - 184px) / 3)"
              width="1600" height="1066" loading="lazy" decoding="async"
              alt="A snowy Manhattan street corner with a taxi van parked beside a stone apartment building and a traffic light overhead.">
-        <span class="frame-num">NO. 07</span>
         <span class="frame-corner tl"></span><span class="frame-corner tr"></span>
         <span class="frame-corner bl"></span><span class="frame-corner br"></span>
       </button>
       <div class="frame-cap">
-        <h3>intersection</h3>
+        <div class="frame-title">
+          <h3>intersection</h3>
+          <span class="frame-num">NO. 07</span>
+        </div>
         <span class="meta">MONOCHROME DIGITAL — 2026</span>
       </div>
     </article>
@@ -569,12 +586,14 @@
              sizes="(max-width: 860px) 100vw, calc((100vw - 184px) / 3)"
              width="1600" height="1066" loading="lazy" decoding="async"
              alt="Cross-country skiers on a snow-covered Central Park path lined with lampposts and bare, snow-laden trees.">
-        <span class="frame-num">NO. 08</span>
         <span class="frame-corner tl"></span><span class="frame-corner tr"></span>
         <span class="frame-corner bl"></span><span class="frame-corner br"></span>
       </button>
       <div class="frame-cap">
-        <h3>central park slopes</h3>
+        <div class="frame-title">
+          <h3>central park slopes</h3>
+          <span class="frame-num">NO. 08</span>
+        </div>
         <span class="meta">MONOCHROME DIGITAL — 2026</span>
       </div>
     </article>
