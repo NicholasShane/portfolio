@@ -343,12 +343,22 @@
 
   /* email + phone side by side overflow below ~330px, so stack them */
   @media (max-width: 380px){
-    .foot-links{ flex-direction:column; align-items:flex-start; gap:8px; }
+    .foot-links{ flex-direction:column; align-items:flex-start; gap:32px; }
     .foot-links span.sep{ display:none; }
   }
 
   @media (prefers-reduced-motion: reduce){
     *{ animation-duration:0.01ms !important; transition-duration:0.01ms !important; }
+  }
+
+  /* Touch targets — invisible hit areas meeting Apple's 44px minimum.
+     Pseudo-elements only: no effect on layout, text position, or the
+     hover underline. Nothing here changes how the site looks. */
+  nav a, .logo, .foot-links a{ position:relative; }
+  nav a::after, .logo::after, .foot-links a::after, .lightbox-close::after{
+    content:''; position:absolute;
+    top:50%; left:50%; transform:translate(-50%,-50%);
+    width:max(100%, 44px); height:max(100%, 44px);
   }
 
   a:focus-visible, button:focus-visible{
