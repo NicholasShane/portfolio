@@ -72,9 +72,9 @@
     position:fixed; top:0; left:0; right:0; z-index:100;
     display:flex; align-items:center; justify-content:space-between;
     padding:26px clamp(20px,5vw,64px);
-    mix-blend-mode:difference;
+    mix-blend-mode:difference; transition:background .4s ease, backdrop-filter .4s ease, border-color .4s ease, padding .3s ease;
   }
-  .logo{
+  header.scrolled{ padding:16px clamp(20px,5vw,64px); mix-blend-mode:normal; background:rgba(11,11,12,0.78); backdrop-filter:blur(14px) saturate(1.1); -webkit-backdrop-filter:blur(14px) saturate(1.1); border-bottom:1px solid var(--line); } .logo{
     font-family:'Cormorant Garamond', serif;
     font-weight:500;
     font-size:20px; letter-spacing:0.03em;
@@ -430,7 +430,7 @@
     <article class="frame">
       <button type="button" class="frame-art" style="aspect-ratio:1.5"
               data-full="images/echoes-1600.webp"
-              data-title="Echoes" data-meta="MONOCHROME DIGITAL — 2025">
+              data-title="echoes" data-meta="MONOCHROME DIGITAL — 2025">
         <img src="images/echoes-800.webp"
              srcset="images/echoes-480.webp 480w,
                      images/echoes-800.webp 800w,
@@ -444,14 +444,14 @@
         <span class="frame-corner bl"></span><span class="frame-corner br"></span>
       </button>
       <div class="frame-cap">
-        <h3>Echoes</h3>
+        <h3>echoes</h3>
         <span class="meta">MONOCHROME DIGITAL — 2025</span>
       </div>
     </article>
     <article class="frame">
       <button type="button" class="frame-art" style="aspect-ratio:1.5"
               data-full="images/kazuo-1600.webp"
-              data-title="Kazuo" data-meta="MONOCHROME DIGITAL — 2026">
+              data-title="kazuo" data-meta="MONOCHROME DIGITAL — 2026">
         <img src="images/kazuo-800.webp"
              srcset="images/kazuo-480.webp 480w,
                      images/kazuo-800.webp 800w,
@@ -465,7 +465,7 @@
         <span class="frame-corner bl"></span><span class="frame-corner br"></span>
       </button>
       <div class="frame-cap">
-        <h3>Kazuo</h3>
+        <h3>kazuo</h3>
         <span class="meta">MONOCHROME DIGITAL — 2026</span>
       </div>
     </article>
@@ -475,7 +475,7 @@
     <article class="frame">
       <button type="button" class="frame-art" style="aspect-ratio:0.75"
               data-full="images/king-1199.webp"
-              data-title="King" data-meta="GOUACHE — 2022">
+              data-title="king" data-meta="GOUACHE — 2022">
         <img src="images/king-800.webp"
              srcset="images/king-480.webp 480w,
                      images/king-800.webp 800w,
@@ -488,14 +488,14 @@
         <span class="frame-corner bl"></span><span class="frame-corner br"></span>
       </button>
       <div class="frame-cap">
-        <h3>King</h3>
+        <h3>king</h3>
         <span class="meta">GOUACHE — 2022</span>
       </div>
     </article>
     <article class="frame">
       <button type="button" class="frame-art" style="aspect-ratio:0.722"
               data-full="images/intimacy-1155.webp"
-              data-title="Intimacy" data-meta="GOUACHE — 2024">
+              data-title="intimacy" data-meta="GOUACHE — 2024">
         <img src="images/intimacy-800.webp"
              srcset="images/intimacy-480.webp 480w,
                      images/intimacy-800.webp 800w,
@@ -508,7 +508,7 @@
         <span class="frame-corner bl"></span><span class="frame-corner br"></span>
       </button>
       <div class="frame-cap">
-        <h3>Intimacy</h3>
+        <h3>intimacy</h3>
         <span class="meta">GOUACHE — 2024</span>
       </div>
     </article>
@@ -518,7 +518,7 @@
     <article class="frame">
       <button type="button" class="frame-art" style="aspect-ratio:1.5"
               data-full="images/flash-1600.webp"
-              data-title="Flash" data-meta="MONOCHROME DIGITAL — 2026">
+              data-title="flash" data-meta="MONOCHROME DIGITAL — 2026">
         <img src="images/flash-480.webp"
              srcset="images/flash-480.webp 480w,
                      images/flash-800.webp 800w,
@@ -532,14 +532,14 @@
         <span class="frame-corner bl"></span><span class="frame-corner br"></span>
       </button>
       <div class="frame-cap">
-        <h3>Flash</h3>
+        <h3>flash</h3>
         <span class="meta">MONOCHROME DIGITAL — 2026</span>
       </div>
     </article>
     <article class="frame">
       <button type="button" class="frame-art" style="aspect-ratio:1.5"
               data-full="images/intersection-1600.webp"
-              data-title="Intersection" data-meta="MONOCHROME DIGITAL — 2026">
+              data-title="intersection" data-meta="MONOCHROME DIGITAL — 2026">
         <img src="images/intersection-480.webp"
              srcset="images/intersection-480.webp 480w,
                      images/intersection-800.webp 800w,
@@ -553,14 +553,14 @@
         <span class="frame-corner bl"></span><span class="frame-corner br"></span>
       </button>
       <div class="frame-cap">
-        <h3>Intersection</h3>
+        <h3>intersection</h3>
         <span class="meta">MONOCHROME DIGITAL — 2026</span>
       </div>
     </article>
     <article class="frame">
       <button type="button" class="frame-art" style="aspect-ratio:1.5"
               data-full="images/central-park-slopes-1600.webp"
-              data-title="Central Park Slopes" data-meta="MONOCHROME DIGITAL — 2026">
+              data-title="central park slopes" data-meta="MONOCHROME DIGITAL — 2026">
         <img src="images/central-park-slopes-480.webp"
              srcset="images/central-park-slopes-480.webp 480w,
                      images/central-park-slopes-800.webp 800w,
@@ -574,7 +574,7 @@
         <span class="frame-corner bl"></span><span class="frame-corner br"></span>
       </button>
       <div class="frame-cap">
-        <h3>Central Park Slopes</h3>
+        <h3>central park slopes</h3>
         <span class="meta">MONOCHROME DIGITAL — 2026</span>
       </div>
     </article>
@@ -640,7 +640,7 @@
       }
     });
   }, { threshold: 0.15 });
-  frames.forEach(f => io.observe(f));
+  frames.forEach(f => io.observe(f)); const siteHeader=document.querySelector('header'); const onScroll=()=>{ if(window.scrollY>40) siteHeader.classList.add('scrolled'); else siteHeader.classList.remove('scrolled'); }; window.addEventListener('scroll', onScroll, {passive:true}); onScroll();
 
   // lightbox
   const box      = document.getElementById('lightbox');
