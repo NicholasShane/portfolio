@@ -179,7 +179,11 @@
     gap:28px;
     margin-bottom:28px;
   }
-  .work-standalone{ grid-template-columns:1fr; }
+  .work-standalone{
+    grid-template-columns:1fr;
+    max-width:70%;
+    margin-inline:auto;
+  }
   .work-pair{ grid-template-columns:1fr 1fr; }
   .work-trio{ grid-template-columns:1fr 1fr 1fr; }
 
@@ -326,6 +330,7 @@
     .about-grid{ grid-template-columns:1fr; gap:40px; }
     .work-pair, .work-trio{ grid-template-columns:1fr; }
     .work-pair-portrait{ grid-template-columns:1fr; max-width:none; }
+    .work-standalone{ max-width:none; }
     nav ul{ gap:18px; }
     header{ padding:20px; }
     .hero-frame{ top:78px; }
@@ -407,7 +412,7 @@
                      images/princeton-cloister-800.webp 800w,
                      images/princeton-cloister-1200.webp 1200w,
                      images/princeton-cloister-1600.webp 1600w"
-             sizes="(max-width: 860px) 100vw, calc(100vw - 128px)"
+             sizes="(max-width: 860px) 100vw, calc((100vw - 128px) * 0.7)"
              width="1600" height="1254" loading="eager" decoding="async"
              alt="Vaulted Gothic cloister at Princeton, ribbed stone arches receding down a flagstone walkway toward a distant doorway.">
         <span class="frame-num">NO. 01</span>
