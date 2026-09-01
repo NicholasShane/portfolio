@@ -128,6 +128,7 @@
     bottom:-9px;
   }
   .hero-frame .br{ bottom:-9px; right:12px; background:var(--ink); padding:0 6px;}
+  .hero-frame .bl.long{ font-size:11.5px; }
 
   .hero-eyebrow{ margin-bottom:18px; opacity:0; animation:rise .9s .1s ease forwards; }
   .hero h1{
@@ -164,7 +165,7 @@
     letter-spacing:0.04em; color:var(--ash); text-transform:uppercase;
   }
   .hero-meta{
-    font-family:'JetBrains Mono', monospace; font-size:11px; font-weight:400; color:var(--ash);
+    font-family:'JetBrains Mono', monospace; font-size:9.5px; font-weight:400; color:var(--ash);
     text-align:right; line-height:1.8; letter-spacing:0.04em;
   }
 
@@ -350,7 +351,7 @@
        the viewport. Drop the lens spec and the city (both stated
        elsewhere) and keep the piece number and the tagline. */
     .hero-frame .tr.long, .hero-frame .br{ display:none; }
-    .hero-frame .bl.long{ font-size:9px; letter-spacing:0.02em; }
+    .hero-frame .bl.long{ font-size:10px; letter-spacing:0.02em; }
     .about-grid{ grid-template-columns:1fr; gap:40px; }
     .work-pair, .work-trio{ grid-template-columns:1fr; }
     .work-pair-portrait{ grid-template-columns:1fr; max-width:none; }
@@ -370,10 +371,10 @@
   }
 
   @media (max-width: 400px){
-    .hero-frame .bl.long{ font-size:7.5px; letter-spacing:0; }
+    .hero-frame .bl.long{ font-size:8.5px; letter-spacing:0; }
   }
   @media (max-width: 340px){
-    .hero-frame .bl.long{ font-size:6.5px; }
+    .hero-frame .bl.long{ font-size:7px; }
   }
 
   /* email + phone side by side overflow below ~330px, so stack them */
