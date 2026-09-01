@@ -357,6 +357,13 @@
     .hero{ padding-bottom:44px; }
   }
 
+  /* The hero’s side padding is clamp(20px,5vw,64px) but the frame is
+     pinned at 22px, so below ~500px the text starts outside the border
+     line. Hold the padding clear of the frame on small screens. */
+  @media (max-width: 520px){
+    .hero{ padding-left:36px; padding-right:36px; }
+  }
+
   @media (max-width: 400px){
     .hero-frame .bl.long{ font-size:7.5px; letter-spacing:0; }
   }
