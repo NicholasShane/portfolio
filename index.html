@@ -340,8 +340,12 @@
   .foot-links a:hover, .foot-links a:focus-visible{ color:var(--paper); }
 
   @media (max-width: 860px){
-    .hero-frame .bl.long{ font-size:8.5px; letter-spacing:0.02em; }
-    .hero-frame .tr.long{ font-size:8px; letter-spacing:0.01em; }
+    /* These four corner labels are absolutely positioned and nowrap, so
+       they collide with each other below ~440px rather than overflowing
+       the viewport. Drop the lens spec and the city (both stated
+       elsewhere) and keep the piece number and the tagline. */
+    .hero-frame .tr.long, .hero-frame .br{ display:none; }
+    .hero-frame .bl.long{ font-size:9px; letter-spacing:0.02em; }
     .about-grid{ grid-template-columns:1fr; gap:40px; }
     .work-pair, .work-trio{ grid-template-columns:1fr; }
     .work-pair-portrait{ grid-template-columns:1fr; max-width:none; }
@@ -351,6 +355,13 @@
     .hero-frame{ top:78px; }
     .hero-statement{ white-space:normal; max-width:100%; }
     .hero{ padding-bottom:44px; }
+  }
+
+  @media (max-width: 400px){
+    .hero-frame .bl.long{ font-size:7.5px; letter-spacing:0; }
+  }
+  @media (max-width: 340px){
+    .hero-frame .bl.long{ font-size:6.5px; }
   }
 
   /* email + phone side by side overflow below ~330px, so stack them */
