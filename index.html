@@ -36,7 +36,14 @@
   }
 
   *{ box-sizing:border-box; }
-  html{ scroll-behavior:smooth; }
+  html{
+    scroll-behavior:smooth;
+    /* stop iOS Safari inflating text in blocks it judges too small,
+       which overrides the clamp() sizing. 100% (not none) keeps
+       pinch-zoom working. */
+    -webkit-text-size-adjust:100%;
+    text-size-adjust:100%;
+  }
 
   body{
     margin:0;
