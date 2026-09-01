@@ -695,6 +695,14 @@
 </div>
 
 <script>
+  // Safari restores scroll on reload; when the target can't be satisfied it
+  // clamps to the end of the document and dumps you at the bottom. Opt out
+  // and start at the top, unless the URL points at a section.
+  if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
+  addEventListener('load', () => {
+    if (!location.hash) window.scrollTo({ top: 0, behavior: 'instant' });
+  });
+
   // scroll-reveal for work frames
   const frames = document.querySelectorAll('.frame');
   const io = new IntersectionObserver((entries) => {
