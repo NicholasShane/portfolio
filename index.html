@@ -123,12 +123,12 @@
   .hero-frame .tr{ top:-9px; right:12px; background:var(--ink); padding:0 6px;}
   .hero-frame .tr.long{ white-space:nowrap; }
   .hero-frame .bl{ bottom:-9px; left:12px; background:var(--ink); padding:0 6px;}
-  .hero-frame .bl.long{
+  .hero-frame .tl.long{
     white-space:nowrap; max-width:none;
     bottom:-9px;
   }
-  .hero-frame .br{ bottom:-9px; right:12px; background:var(--ink); padding:0 6px;}
-  .hero-frame .bl.long{ font-size:11.5px; }
+  .hero-frame .br{ bottom:-9px; right:12px; background:var(--ink); padding:0 6px;} .hero-frame .br.long{ white-space:nowrap; }
+  .hero-frame .tl.long{ font-size:11.5px; }
 
   .hero-eyebrow{ margin-bottom:18px; opacity:0; animation:rise .9s .1s ease forwards; }
   .hero h1{
@@ -350,10 +350,10 @@
        they collide with each other below ~440px rather than overflowing
        the viewport. Drop the lens spec and the city (both stated
        elsewhere) and keep the piece number and the tagline. */
-    .hero-frame .tr.long, .hero-frame .br{ display:none; }
+    .hero-frame .tr, .hero-frame .br{ display:none; }
     /* touch users don’t need a scroll prompt */
     .hero-meta{ display:none; }
-    .hero-frame .bl.long{ font-size:10px; letter-spacing:0.02em; }
+    .hero-frame .tl.long{ font-size:10px; letter-spacing:0.02em; }
     .about-grid{ grid-template-columns:1fr; gap:40px; }
     .work-pair, .work-trio{ grid-template-columns:1fr; }
     .work-pair-portrait{ grid-template-columns:1fr; max-width:none; }
@@ -373,10 +373,10 @@
   }
 
   @media (max-width: 400px){
-    .hero-frame .bl.long{ font-size:8.5px; letter-spacing:0; }
+    .hero-frame .tl.long{ font-size:8.5px; letter-spacing:0; }
   }
   @media (max-width: 340px){
-    .hero-frame .bl.long{ font-size:7px; }
+    .hero-frame .tl.long{ font-size:7px; }
   }
 
   /* email + phone side by side overflow below ~330px, so stack them */
@@ -427,10 +427,10 @@
 
 <section class="hero" id="top">
   <div class="hero-frame" aria-hidden="true">
-    <span class="tl">NO. 001</span>
-    <span class="tr long">LEICA DC VARIO-ELMAR 1:3.3-6.4/4.3-129.</span>
-    <span class="bl long">INCARNATING THE UNSEEN, THE INTANGIBLE SINCE 2009</span>
-    <span class="br">MANHATTAN, NY</span>
+    <span class="tl long">INCARNATING THE UNSEEN, THE INTANGIBLE SINCE 2009</span>
+    <span class="tr">MANHATTAN, NY</span>
+    <span class="bl">NO. 001</span>
+    <span class="br long">LEICA DC VARIO-ELMAR 1:3.3-6.4/4.3-129.</span>
   </div>
   
   <h1>Nicholas<br><em>Shane.</em></h1>
