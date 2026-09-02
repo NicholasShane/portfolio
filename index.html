@@ -297,9 +297,9 @@
 
   /* ---------- about / editorial spread ---------- */
   .about-grid{
-    display:grid; grid-template-columns:1fr 1fr; gap:80px; align-items:start;
+    display:grid; grid-template-columns:clamp(160px,20vw,220px) 1fr 1fr; gap:80px; align-items:start;
   }
-  .pull-quote{
+  .about-portrait img{ width:100%; height:auto; display:block; border:1px solid var(--line); } .pull-quote{
     font-family:'Cormorant Garamond', serif; font-style:italic; font-weight:500;
     font-size:clamp(19px,2.3vw,29px); line-height:1.45; color:var(--ash);
   }
@@ -653,7 +653,7 @@
     
   </div>
   <div class="about-grid">
-    <div class="pull-quote">
+    <div class="about-portrait"><img src="images/portrait-800.webp" srcset="images/portrait-480.webp 480w, images/portrait-800.webp 800w, images/portrait-1068.webp 1068w" sizes="(max-width: 860px) 100vw, 220px" width="1068" height="1601" loading="lazy" decoding="async" alt="Black and white portrait of Nicholas Shane holding a camera."></div><div class="pull-quote">
       “I often fantasize about simpler, indulgent walks of life – gallerist, bartender, ski instructor; my work is also an <span class="accent">externalization of those alternate selves</span> within me, who otherwise would not come to light.”
     </div>
     <div class="about-body">
