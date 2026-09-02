@@ -297,9 +297,9 @@
 
   /* ---------- about / editorial spread ---------- */
   .about-grid{
-    display:grid; grid-template-columns:clamp(160px,20vw,220px) 1fr 1fr; gap:80px; align-items:start;
+    display:grid; grid-template-columns:clamp(160px,20vw,220px) 1fr 1fr; gap:80px; align-items:stretch;
   }
-  .about-portrait img{ width:100%; height:auto; display:block; border:1px solid var(--line); } .pull-quote{
+  .about-portrait{ height:100%; } .about-portrait img{ width:100%; height:100%; display:block; object-fit:cover; border:1px solid var(--line); filter:none; } .pull-quote{
     font-family:'Cormorant Garamond', serif; font-style:italic; font-weight:500;
     font-size:clamp(19px,2.3vw,29px); line-height:1.45; color:var(--ash);
   }
