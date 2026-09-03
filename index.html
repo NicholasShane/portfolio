@@ -297,11 +297,11 @@
 
   /* ---------- about / editorial spread ---------- */
   .about-grid{
-    display:grid; grid-template-columns:clamp(240px,28vw,340px) minmax(0,640px); grid-template-areas:"portrait quote" "portrait bio"; gap:40px 80px; align-items:stretch;
+    display:grid; grid-template-columns:minmax(0,340px) clamp(240px,28vw,340px) minmax(0,640px); grid-template-areas:"quote portrait bio" "quote portrait bio"; gap:40px 80px; align-items:stretch; justify-content:center;
   }
-  .about-portrait{ height:100%; grid-area:portrait; } .about-portrait img{ width:auto; max-width:100%; height:100%; display:block; object-fit:contain; border:1px solid var(--line); filter:none; } .pull-quote{ grid-area:quote;
+  .about-portrait{ height:100%; grid-area:portrait; } .about-portrait img{ width:auto; max-width:100%; height:100%; display:block; object-fit:contain; border:1px solid var(--line); filter:none; } .pull-quote{ grid-area:quote; align-self:center; text-align:right;
     font-family:'Cormorant Garamond', serif; font-style:italic; font-weight:500;
-    font-size:clamp(11.4px,1.38vw,17.4px); line-height:1.45; color:var(--ash);
+    font-size:clamp(20px,2.6vw,32px); line-height:1.45; color:var(--ash);
   }
   .pull-quote .accent{ color:var(--paper); font-weight:700; font-size:inherit; }
   .about-body{ grid-area:bio; } .about-body p{ font-family:'JetBrains Mono', monospace; font-size:13px; font-weight:400; line-height:1.85; letter-spacing:0.04em; color:#cfcac1; margin:0 0 20px; }
@@ -654,7 +654,7 @@
   </div>
   <div class="about-grid">
     <div class="about-portrait"><img src="images/portrait-800.webp" srcset="images/portrait-480.webp 480w, images/portrait-800.webp 800w, images/portrait-1068.webp 1068w" sizes="(max-width: 860px) 100vw, 220px" width="1068" height="1601" loading="lazy" decoding="async" alt="Black and white portrait of Nicholas Shane holding a camera."></div><div class="pull-quote">
-      “I often fantasize about simpler, indulgent walks of life – gallerist, bartender, ski instructor; my work is also an <span class="accent">externalization of those alternate selves</span> within me, who otherwise would not come to light.”
+      “I often fantasize about<br>simpler, indulgent walks of life – <br>gallerist, bartender, ski instructor;<br>my work is also an <span class="accent">externalization of<br>those alternate selves</span> within me,<br>who otherwise would not<br>come to light.”
     </div>
     <div class="about-body">
       <span class="eyebrow">Biography</span>
