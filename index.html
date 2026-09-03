@@ -299,7 +299,7 @@
   .about-grid{
     display:grid; grid-template-columns:minmax(0,480px) clamp(240px,28vw,340px) minmax(0,640px); grid-template-areas:"quote portrait bio" "quote portrait bio"; gap:40px 80px; align-items:stretch; justify-content:start;
   }
-  .about-portrait{ height:100%; grid-area:portrait; } .about-portrait img{ width:auto; max-width:100%; height:100%; display:block; margin-left:auto; object-fit:contain; border:1px solid var(--line); filter:none; } .pull-quote{ grid-area:quote; align-self:center; text-align:right;
+  .about-portrait{ height:100%; grid-area:portrait; } .about-portrait img{ width:auto; max-width:100%; height:100%; display:block; margin-inline:auto; object-fit:contain; border:1px solid var(--line); filter:none; } .pull-quote{ grid-area:quote; align-self:center; text-align:right;
     font-family:'Cormorant Garamond', serif; font-style:italic; font-weight:500;
     font-size:clamp(16px,2.08vw,25.6px); line-height:1.45; color:var(--ash);
   }
