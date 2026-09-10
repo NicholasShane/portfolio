@@ -305,7 +305,7 @@
   }
   .pull-quote .accent{ color:var(--paper); font-weight:700; font-size:inherit; }
   .about-body{ grid-area:bio; } .about-body p{ font-family:'JetBrains Mono', monospace; font-size:13px; font-weight:400; line-height:1.85; letter-spacing:0.04em; color:#cfcac1; margin:0 0 20px; }
-  .about-body p.small-line{ font-size:11px; color:var(--ash); }
+  .about-body p.small-line{ font-size:clamp(10px,0.9vw,11px); color:var(--ash); }
   .about-body .stat-list + p.small-line{ margin-top:32px; }
   .about-body .eyebrow{ margin-bottom:16px; display:block; }
   /* the last paragraph needs no trailing margin, and the run-out to the
@@ -317,7 +317,7 @@
   .stat-row{
     display:flex; justify-content:space-between; padding:10px 0;
     border-bottom:1px solid var(--line);
-    font-family:'JetBrains Mono', monospace; font-size:12px; font-weight:400; color:var(--ash);
+    font-family:'JetBrains Mono', monospace; font-size:clamp(11px,1vw,12px); font-weight:400; color:var(--ash);
   }
   .stat-row b{ color:var(--paper); font-weight:500; }
 
@@ -658,7 +658,7 @@
     </div>
     <div class="about-body">
       <span class="eyebrow">Biography</span>
-      <p style="color:var(--paper); font-family:'Cormorant Garamond', serif; font-size:clamp(14px,1.5vw,17px); line-height:1.65;">Nicholas Shane (Posivak) is a photographer &amp; illustrator working exclusively in monochrome. Each work seeks to engage the viewer in a vulnerable relationship with itself and in turn, with him.</p>
+      <p style="color:var(--paper); font-family:'Cormorant Garamond', serif; font-size:clamp(17px,1.5vw,19px); line-height:1.65;">Nicholas Shane (Posivak) is a photographer &amp; illustrator working exclusively in monochrome. Each work seeks to engage the viewer in a vulnerable relationship with itself and in turn, with him.</p>
       <div class="stat-list">
         <div class="stat-row"><span>Based in</span><b>Manhattan, NY</b></div>
         <div class="stat-row"><span>Mediums</span><b>digital, charcoal, gouache, ink</b></div>
